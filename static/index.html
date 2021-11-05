@@ -147,7 +147,7 @@ function addEntity(entity, data) {
     world[entity] = data;
     // drawNextFrame(); // (but should we?)
     //XXX: Send a XHTML Request that updates the entity you just  modified!
-    let url = "http://localhost:5000/entity/"+entity;
+    let url = "http://" + location.host + "/entity/" + entity;
     sendJSONXMLHTTPRequest(url, data, callback)
 }
 
@@ -274,7 +274,7 @@ function update() {
     //XXX: TODO Get the world from the webservice using a XMLHTTPRequest
     drawNextFrame();
 
-    let url = "http://localhost:5000/world";
+    let url = "http://" + location.host + "/world";
     sendJSONXMLHTTPRequest(url, null, callback)
 
     drawFrame();
